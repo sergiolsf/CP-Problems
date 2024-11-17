@@ -11,14 +11,14 @@ typedef vector<vi> vvi;
 void fastio() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-}
+}   
 
 void solve() {
     int n, m, L;
     cin >> n >> m >> L;
     priority_queue<int> pq;
     
-    vector<pii> hurdles(n+1); // inicio do obstaculo e minimo que a poção deve ter
+    vector<pii> hurdles(n+1);
     for (int i = 1; i <= n; i++) {
         int l,r;
         cin >> l >> r;
