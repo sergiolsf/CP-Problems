@@ -64,7 +64,3 @@ If you're also passionate about Competitive Programming or have questions about 
 - **Email**: luissergio474@gmai.com
 - **LinkedIn**: [Your Profile](https://www.linkedin.com/in/s%C3%A9rgio-santos26/)
 - **GitHub**: [Your Profile](https://github.com/sergiolsf)
-
----
-
-Let me know if you'd like any further customization for the README!
