@@ -62,5 +62,5 @@ Suggestions and feedback are welcome! If you have ideas to improve the solutions
 If you're also passionate about Competitive Programming or have questions about the repository, feel free to reach out:
 
 - **Email**: luissergio474@gmai.com
-- **LinkedIn**: [Your Profile](https://www.linkedin.com/in/s%C3%A9rgio-santos26/)
-- **GitHub**: [Your Profile](https://github.com/sergiolsf)
+- **LinkedIn**: [Sérgio Santos](https://www.linkedin.com/in/s%C3%A9rgio-santos26/)
+- **GitHub**: [Sérgio Santos](https://github.com/sergiolsf)
