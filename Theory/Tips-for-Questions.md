@@ -11,8 +11,10 @@ Declare a priority queue with a min-heap (smallest to largest)
 
 Efficiently manipulate sets of bits. It allows direct operations on individual bits or the entire set.
 
-bitset<8> b1; -> Bitset of 8 bits
-b1.count -> Counts the number of bits set to 1
-b1.to_ullong() -> Converts the bitset to an unsigned long long
+bitset<8> b1;  -->  Bitset of 8 bits
 
---
+b1.count  -->  Counts the number of bits set to 1
+
+b1.to_ullong()  -->  Converts the bitset to an unsigned long long
+
+---
