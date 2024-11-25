@@ -13,8 +13,8 @@ Efficiently manipulate sets of bits. It allows direct operations on individual b
 
 bitset<8> b1;  -->  Bitset of 8 bits
 
-b1.count  -->  Counts the number of bits set to 1
+b1.count( )  -->  Counts the number of bits set to 1
 
-b1.to_ullong()  -->  Converts the bitset to an unsigned long long
+b1.to_ullong( )  -->  Converts the bitset to an unsigned long long
 
 ---
