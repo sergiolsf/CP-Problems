@@ -8,7 +8,7 @@ typedef pair<int,int> pii;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 
-const int MAX_N = 10000000;
+const int MAX_N = 200010;
 
 string T, P;                                     // T = text, P = pattern
 int n, m;                                        // n = |T|, m = |P|
