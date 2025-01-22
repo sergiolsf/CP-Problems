@@ -45,7 +45,7 @@ void fastio(){
 }
 
 void solve(){
-    int k,n;
+    int k, n;
     cin >> k >> n;
 
     if (k == 1){
@@ -75,22 +75,22 @@ void solve(){
     for(int r=1;r<=17;r++){
         Cvals[r]=comb(n+1,r);
     }
-    for(int x=1;x<=k;x++){
-        if(x==1){
-            cout<<(n%MOD);
+    for(int x=1; x<=k; x++){
+        if(x == 1){
+            cout << (n%MOD);
         } else {
-            int ans=0;
-            for (int s=1;s<=17;s++){
-                int cnt=t[s][x];
-                if(!cnt)continue;
-                int c=(s+1<=17?Cvals[s+1]:comb(n+1,s+1));
-                ans=(ans+cnt*c)%MOD;
+            int ans = 0;
+            for (int s = 1; s <= 17; s++) {
+                int cnt = t[s][x];
+                if (!cnt) continue;
+                int c = (s+1 <= 17 ? Cvals[s+1]: comb(n+1, s+1));
+                ans = (ans + cnt*c)%MOD;
             }
-            cout<<ans;
+            cout << ans;
         }
-        if(x<k) cout<<" ";
+        if (x < k) cout << " ";
     }
-    cout<<endl;
+    cout << endl;
 }
 
 signed main(){

@@ -41,7 +41,6 @@ signed main() {
         }
     }
 
-    //-----------------------
     vector<vector<bool>> visited(n+1, vector<bool> (m+1,false));
     queue<pii> q;
 
@@ -71,7 +70,6 @@ signed main() {
             }
         }
     }
-    //-----------------------   
 
     if (!flag) {
         cout << "NO" << endl;
