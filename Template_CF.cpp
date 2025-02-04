@@ -4,6 +4,7 @@ using namespace std;
 #define int long long
 #define endl '\n'
 #define all(x) (x).begin(), (x).end()
+#define pb push_back
 typedef pair<int,int> pii;
 typedef vector<int> vi;
 typedef vector<vi> vvi;

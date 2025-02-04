@@ -17,6 +17,18 @@ void fastio() {
 
 signed main() {
     fastio();
+    string s;
+    cin >> s;
+    if (s == "N") cout << "S" << endl;
+    if (s == "S") cout << "N" << endl;
+    if (s == "E") cout << "W" << endl;
+    if (s == "W") cout << "E" << endl;
+    if (s == "NE") cout << "SW" << endl;
+    if (s == "SW") cout << "NE" << endl;
+    if (s == "NW") cout << "SE" << endl;
+    if (s == "SE") cout << "NW" << endl;
+
+    
   
     return 0;
 }
