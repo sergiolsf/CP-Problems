@@ -15,16 +15,26 @@ void fastio() {
     cout.tie(NULL);
 }
 
-void solve() {
-
-}
-
 signed main() {
     fastio();
-    int t;
-    cin >> t;
-    while(t--) {
-        solve();
-    }    
+    int N, M;
+    cin >> N >> M;
+    vector<bool> a(N+1, false);
+    int cont = N;
+    for (int i = 0; i < M; i++) {
+        int x;
+        cin >> x;
+        a[x] = true;
+        cont--;
+    }
+
+    cout << cont << endl;
+
+
+    for (int i =1 ;i <= N; i++) {
+        if (!a[i]) cout << i << " ";
+    }
+    if (cont) cout << endl;
+  
     return 0;
 }

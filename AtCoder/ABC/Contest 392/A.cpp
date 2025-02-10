@@ -15,16 +15,14 @@ void fastio() {
     cout.tie(NULL);
 }
 
-void solve() {
-
-}
-
 signed main() {
     fastio();
-    int t;
-    cin >> t;
-    while(t--) {
-        solve();
-    }    
+    vi a(3);
+    for (int i = 0; i < 3; i++) cin >> a[i];
+    sort(all(a));
+    if (a[0]*a[1] == a[2]) cout << "Yes\n";
+    else cout << "No\n";
+
+  
     return 0;
 }
