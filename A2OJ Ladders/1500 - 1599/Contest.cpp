@@ -17,18 +17,14 @@ void fastio() {
 
 signed main() {
     fastio();
-    int n;
-    cin >> n;
-    int ans = 0;
-    int energy = 0;
-    int ant = 0;
-    for (int i = 1; i <= n; i++) {
-        int h;
-        cin >> h;
-        energy += ant-h;
-        ans = min(ans, energy);
-        ant = h;
-    }
-    cout << abs(ans) << endl;  
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    int misha = max(3*(a / 10), a- ((a/250) * c));
+    int vasya = max(3*(b / 10), b-((b/250) * d));
+
+    if (misha > vasya) cout << "Misha\n";
+    else if (misha < vasya) cout << "Vasya\n";
+    else cout << "Tie\n";
+    
     return 0;
 }

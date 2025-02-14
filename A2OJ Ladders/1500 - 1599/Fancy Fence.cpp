@@ -15,20 +15,20 @@ void fastio() {
     cout.tie(NULL);
 }
 
+void solve() {
+    int a;
+    cin >> a;
+    if (360%(180-a) == 0) cout << "YES\n";
+    else cout << "NO\n";
+}
+
 signed main() {
     fastio();
-    int n;
-    cin >> n;
-    int ans = 0;
-    int energy = 0;
-    int ant = 0;
-    for (int i = 1; i <= n; i++) {
-        int h;
-        cin >> h;
-        energy += ant-h;
-        ans = min(ans, energy);
-        ant = h;
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
     }
-    cout << abs(ans) << endl;  
+  
     return 0;
 }

@@ -17,18 +17,15 @@ void fastio() {
 
 signed main() {
     fastio();
-    int n;
-    cin >> n;
-    int ans = 0;
-    int energy = 0;
-    int ant = 0;
-    for (int i = 1; i <= n; i++) {
-        int h;
-        cin >> h;
-        energy += ant-h;
-        ans = min(ans, energy);
-        ant = h;
+    string s;
+    cin >> s;
+    string h = "helloA";
+    int j = 0;
+    for (int i = 0; i < (int)s.size(); i++) {
+        if (h[j] == s[i]) j++;
     }
-    cout << abs(ans) << endl;  
+    if (j == 5) cout << "YES\n";
+    else cout << "NO\n";
+  
     return 0;
 }
