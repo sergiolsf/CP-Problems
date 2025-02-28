@@ -9,17 +9,20 @@ typedef pair<int,int> pii;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 
-void fastio() {
+void fastio() 
+{
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 }
 
-void solve() {
+void solve() 
+{
 
 }
 
-signed main() {
+signed main() 
+{
     fastio();
     int t;
     cin >> t;

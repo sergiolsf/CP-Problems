@@ -16,13 +16,19 @@ void fastio() {
 }
 
 void solve() {
-    int n, k;
-    cin >> n >> k;
-    for (int i = 0; i < n; i++) {
-        if (((i&(n-1)) == i)) cout << k;
-        else cout << 0;
-        cout << (i == n-1 ? "\n" : " ");
+    int n;
+    cin >> n;
+    int maior;
+    int sum = 0;
+    for (int i = 1; i <= n; i++) {
+        int x;
+        cin >> x;
+        if (i == 1) maior = x;
+        sum += x;
+        maior = max(maior, x);
     }
+    double ans = (double) maior + (double) (sum-maior) / (double) (n-1);
+    cout << setprecision(20) << ans << endl;
 }
 
 signed main() {

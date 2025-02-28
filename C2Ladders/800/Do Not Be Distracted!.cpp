@@ -16,13 +16,25 @@ void fastio() {
 }
 
 void solve() {
-    int n, k;
-    cin >> n >> k;
-    for (int i = 0; i < n; i++) {
-        if (((i&(n-1)) == i)) cout << k;
-        else cout << 0;
-        cout << (i == n-1 ? "\n" : " ");
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    vector<bool> alf(30, false);
+
+    char ult = s[0];
+    int c = s[0]-'A';
+    alf[c] = true;
+    for (int i = 1; i < n; i++) {
+        int d = s[i]-'A';
+        if (alf[d] && s[i] != ult) {
+            cout << "NO\n";
+            return;
+        }
+        ult = s[i];
+        alf[d] = true;
     }
+    cout << "YES\n";
 }
 
 signed main() {
