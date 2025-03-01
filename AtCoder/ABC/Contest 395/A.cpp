@@ -16,28 +16,31 @@ void fastio()
     cout.tie(NULL);
 }
 
-void solve() 
-{
-     int s;
-     cin >> s;
-     int sum = 0;
-     int ans = 0;
-     for (int i = 1; sum < s; i+=2) 
-     {
-        sum += i;
-        ans++;
-     }
-     cout << ans << endl;
-}
-
 signed main() 
 {
     fastio();
-    int t;
-    cin >> t;
-    while(t--) 
+
+    int n;
+    cin >> n;
+    int ult;
+    for (int i = 1; i <= n; i++) 
     {
-        solve();
-    }    
+        int a;
+        cin >> a;
+        if (i == 1) 
+        {
+            ult = a;
+            continue;
+        }
+        if (ult >= a) 
+        {
+            cout << "No\n";
+            return 0;
+        }
+        
+        ult = a;
+    }
+    cout << "Yes\n";
+  
     return 0;
 }
