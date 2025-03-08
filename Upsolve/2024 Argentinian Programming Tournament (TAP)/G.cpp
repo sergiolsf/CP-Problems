@@ -15,16 +15,19 @@ void fastio() {
     cout.tie(NULL);
 }
 
-void solve() {
-
-}
-
 signed main() {
     fastio();
-    int t;
-    cin >> t;
-    while(t--) {
-        solve();
-    }    
+    string s; cin >> s;
+
+    int T = 0, P = 0, A = 0, U = 0;
+    for (auto c : s) {
+        if (c == 'T') T++;
+        else if (c == 'P') P++;
+        else if (c == 'A') A++;
+        else if (c == 'U') U++;
+    }
+
+    cout << min({T, P, A+U}) << endl;
+  
     return 0;
 }

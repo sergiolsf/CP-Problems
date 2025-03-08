@@ -15,16 +15,23 @@ void fastio() {
     cout.tie(NULL);
 }
 
-void solve() {
-
-}
-
 signed main() {
     fastio();
-    int t;
-    cin >> t;
-    while(t--) {
-        solve();
-    }    
+    int n; cin >> n;
+    
+    int ans = 0, st = 0;
+    for (int i = 0; i < n; i++) {
+        int r; cin >> r;
+        if (r) {
+            st++;
+            ans++;
+        } else {
+            ans--;
+            st = 0;
+        }
+        if (st >= 3) ans++;
+    }
+    cout << ans << endl;
+  
     return 0;
 }

@@ -16,7 +16,14 @@ void fastio() {
 }
 
 void solve() {
-
+    int P;
+    cin >> P;
+    for (int i = 2; i*i <= (P-1); i++)  {
+        if ((P-1)%i == 0) {
+            cout << i << " " << (P-1) << endl;
+            return;
+        }
+    }
 }
 
 signed main() {

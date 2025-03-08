@@ -15,8 +15,30 @@ void fastio() {
     cout.tie(NULL);
 }
 
-void solve() {
+int lcm(int a, int b) {
+     return a/__gcd(a,b) * b;
+}
 
+int menorDiv(int m) {
+    for (int i = 2; i*i <= m; i++) {
+        if (m%i == 0) return i;
+    }
+}
+
+void solve() {
+    int a, b; cin >> a >> b;
+    int mi = min(a,b);
+    int ma = max(a,b);
+    int m = lcm(a,b);
+
+    if (ma == m) {
+        if (mi == 1) m*=m;
+        else {
+            m *= menorDiv(m);
+        }
+    }
+
+    cout << m << endl;
 }
 
 signed main() {

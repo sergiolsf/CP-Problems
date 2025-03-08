@@ -15,16 +15,12 @@ void fastio() {
     cout.tie(NULL);
 }
 
-void solve() {
-
-}
-
 signed main() {
     fastio();
-    int t;
-    cin >> t;
-    while(t--) {
-        solve();
-    }    
+    int A, B, C; cin >> A >> B >> C;
+    
+    if (max({A, B, C}) >= A+B+C-max({A,B,C})) cout << "S\n";
+    else cout << "N\n";
+  
     return 0;
 }

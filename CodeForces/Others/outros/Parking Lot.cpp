@@ -15,16 +15,23 @@ void fastio() {
     cout.tie(NULL);
 }
 
-void solve() {
-
+int modpow(int b, int p) {
+    int ans = 1;
+    while (p > 0) {
+        if (p&1) ans *= b;
+        b = b*b;
+        p >>= 1;
+    }
+    return ans;
 }
 
 signed main() {
     fastio();
-    int t;
-    cin >> t;
-    while(t--) {
-        solve();
-    }    
+    int n; cin >> n;
+
+    int ans = 2*4*3*modpow(4, n-3) + (n-3)*9*4*modpow(4, n-4);
+
+    cout << ans << endl;
+  
     return 0;
 }
