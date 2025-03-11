@@ -16,7 +16,18 @@ void fastio() {
 }
 
 void solve() {
+    int n; cin >> n;
+    vi b(2*n); 
+    for (auto &i: b) cin >> i;
 
+    sort(all(b));
+    int sumPar = 0, sumImpar = 0;
+    for (int i = 0; i < 2*n; i+=2) sumPar += b[i];
+    for (int i = 1; i < 2*n-1; i+=2) sumImpar += b[i];
+    sumPar += b[2*n-1];
+
+    for (int i = 0; i < 2*n-1; i++) cout << b[i] << " ";
+    cout << sumPar-sumImpar << " " << b[2*n-1] << endl;
 }
 
 signed main() {
