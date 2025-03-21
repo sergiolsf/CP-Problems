@@ -4,6 +4,7 @@ using namespace std;
 #define int long long
 #define endl '\n'
 #define all(x) (x).begin(), (x).end()
+#define pb push_back
 typedef pair<int,int> pii;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
@@ -14,7 +15,7 @@ void fastio() {
     cout.tie(NULL);
 }
 
-const int MAXN = 100010;
+const int MAXN = 100'000;
 int seg[4*MAXN];
 
 int query (int pos, int ini, int fim, int id) {
@@ -25,41 +26,57 @@ int query (int pos, int ini, int fim, int id) {
 
     int m = (ini + fim)/2;
     int e = 2*pos, d = 2*pos+1;
-    return seg[pos] + query(e, ini, m, id) + query(d, m+1, fim, id);
+    int se = query(e, ini, m, id);
+    int sd = query(d, m+1, fim, id);
+    
+    return sd+se+seg[pos];    
 }
 
-void update (int pos, int ini, int fim, int p, int q, int val) {
+void update (int pos, int ini, int fim, int p, int q, int v) {
     if (q < ini || p > fim) return;
     if (p <= ini && fim <= q) {
-        seg[pos] += val;
+        seg[pos] += v;
         return;
     }
 
     int m = (ini + fim)/2;
     int e = 2*pos, d = 2*pos+1;
-    update(e, ini, m, p, q, val);
-    update(d, m+1, fim, p, q, val);
+
+    update(e, ini, m, p, q, v);
+    update(d, m+1, fim, p, q, v);
 }
 
 
+void build(int pos, int ini, int fim) {
+    if (ini == fim) {
+        seg[pos] = 0;
+        return;
+    }
+
+    int m = (ini+fim)/2;
+    int e = 2*pos, d = 2*pos+1;
+    build(e, ini, m);
+    build(d, m+1, fim);
+    seg[pos] = 0;
+}
+
 signed main() {
     fastio();
-    int n, m;
-    cin >> n >> m;
+    int n, m; cin >> n >> m;
+
+    build(1, 1, n);
 
     while(m--) {
-        int x;
-        cin >> x;
-        if (x == 1) {
-            int l, r, v;
-            cin >> l >> r >> v;
-            update(1, 0, n-1, l, r-1, v);
-        } else if (x == 2) {
-            int i;
-            cin >> i;
-            cout << query(1, 0, n-1, i) << endl;
+        int p; cin >> p;
+        if (p == 1) {
+            int l, r, v; cin >> l >> r >> v;
+            update(1, 1, n, l+1, r, v);
+        } else {
+            int i; cin >> i;
+            cout << query(1, 1, n, i+1) << endl;
         }
     }
 
+  
     return 0;
 }

@@ -15,18 +15,36 @@ void fastio() {
     cout.tie(NULL);
 }
 
-const int MAXX = 100'000;
+const int MAXB = 33;
 
-void solve() {
-    int x; cin >> x;
-    
-    for (int y = x-1; y >= max(1LL, x-MAXX); y--) {
-        int xy = x^y;
-        if (max(xy, x) < y+min(xy,x)) {
-            cout << y << endl;
-            return;
+int x; 
+
+bool existe(int &y) {
+    for (int i = 1; i <= MAXB; i++) {
+        int Y = 1LL<<(i-1);
+        if (!(x&Y)) {
+            if(Y+y < x) {
+                y += Y;
+                return true;
+            }
         }
     }
+    return false;
+}
+
+void solve() {
+    cin >> x;
+    
+    for (int i = 1; i <= MAXB; i++) {
+        int Y = 1LL<<(i-1);
+        if (x&Y) {
+            if(existe(Y)) {
+                cout << Y << endl;
+                return;
+            }
+        }
+    }
+
     cout << -1 << endl;
 }
 

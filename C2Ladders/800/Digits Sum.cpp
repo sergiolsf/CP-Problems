@@ -4,6 +4,7 @@ using namespace std;
 #define int long long
 #define endl '\n'
 #define all(x) (x).begin(), (x).end()
+#define pb push_back
 typedef pair<int,int> pii;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
@@ -14,8 +15,17 @@ void fastio() {
     cout.tie(NULL);
 }
 
+void solve() {
+    int n; cin >> n;
+    cout << (n+1)/10 << endl;
+}
+
 signed main() {
     fastio();
-
+    int t;
+    cin >> t;
+    while(t--) {
+        solve();
+    }    
     return 0;
 }

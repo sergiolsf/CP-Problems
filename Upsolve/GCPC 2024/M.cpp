@@ -15,6 +15,8 @@ void fastio() {
     cin.tie(NULL);
 }
 
+const int MAXN = 300'000;
+
 vi v;
 
 int f(int x) {
@@ -34,7 +36,7 @@ signed main() {
     v.resize(n);
     for (auto &i : v) cin >> i;
 
-    int l = -400000, r = 400000;
+    int l = -MAXN, r = MAXN;
     for (int i = 0; i < 100; i++) {
         int delta = (r-l)/3;
         int m1 = l+delta;
