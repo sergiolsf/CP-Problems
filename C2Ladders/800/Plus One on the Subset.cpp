@@ -14,23 +14,13 @@ void fastio() {
     cin.tie(NULL);
     cout.tie(NULL);
 }
-//
 
 void solve() {
     int n; cin >> n;
-    vector<pii> a(n);
-    for (int i = 0; i < n; i++) {
-        int v; cin >> v;
-        a[i] = {v,i+1};
-    }
+    vi a(n);
+    for (auto &i : a) cin >> i;
     sort(all(a));
-    int p = a[0].first, k = a[1].first;
-    if (p != k) {
-        cout << a[0].second << endl;
-    } else {
-        cout << a[n-1].second << endl;
-    }
-    
+    cout << a[n-1]-a[0] << endl;
 }
 
 signed main() {
