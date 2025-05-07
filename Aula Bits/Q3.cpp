@@ -14,11 +14,11 @@ void fastio() {
     cout.tie(NULL);
 }
 
-const int MAX_X = 1'000'005;
+int MAX_X;;
 
-vi v(MAX_X);
-vi mobius(MAX_X);
-vi mfp(MAX_X); // menor fator primo
+vi v;
+vi mobius;
+vi mfp; // menor fator primo
 
 void init() {
     for (int i = 2; i < MAX_X; i++) {
@@ -37,23 +37,22 @@ void init() {
 
 
 signed main() {
+    int n; cin >> n;
+    
+    MAX_X = n+1;
+    v.resize(MAX_X);
+    mobius.resize(MAX_X);
+    mfp.resize(MAX_X, 0);
     init();
 
-    int n; cin >> n;
-    for (int i = 0; i < n; i++) {
-        int x; cin >> x;
-        v[x]++;
+
+    int t = n*(n+1)/2;
+    int v = 0;
+    for (int i = 1; i <= n; i++) {
+        v += mobius[i]*((n/i)*(n/i + 1)/2);
     }
 
-    int ans = 0;
-    for (int i = 1; i < MAX_X; i++) {
-        if (!mobius[i]) continue;
-        int d = 0;
-        for (int j = i; j < MAX_X; j+=i) {
-            d += v[j];
-        }
-        ans += mobius[i]*(d*(d-1)/2);
-    }
+    int ans = 6*(t-v);
 
     cout << ans << endl;
     

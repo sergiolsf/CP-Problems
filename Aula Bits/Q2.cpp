@@ -22,7 +22,6 @@ vi mfp(MAX_X); // menor fator primo
 
 void init() {
     for (int i = 2; i < MAX_X; i++) {
-        if (mfp[i]) continue;
         for (int j = i; j < MAX_X; j += i) {
             if (!mfp[j]) mfp[j] = i;
         }
@@ -35,27 +34,32 @@ void init() {
     }
 }
 
+void solve(int teste) {
+    int a, b, c, d, k; cin >> a >> b >> c >> d >> k;
+    if (b > d) swap(b, d);
+    int ans = 0, sub = 0;
+    if (k != 0) {
+        int n = d/k, m = b/k;
+        for (int p = 1; p <= m; p++) {
+            sub += mobius[p]*(m/p)*(m/p);
+            ans += mobius[p]*(m/p)*(n/p);
+        }
+        //cout << sub << endl;
+        sub = (sub-1)/2;
+        ans -= sub;
+    }
+
+    cout << "Case " << teste << ": " << ans << endl;
+}
+
 
 signed main() {
     init();
 
-    int n; cin >> n;
-    for (int i = 0; i < n; i++) {
-        int x; cin >> x;
-        v[x]++;
-    }
-
-    int ans = 0;
-    for (int i = 1; i < MAX_X; i++) {
-        if (!mobius[i]) continue;
-        int d = 0;
-        for (int j = i; j < MAX_X; j+=i) {
-            d += v[j];
-        }
-        ans += mobius[i]*(d*(d-1)/2);
-    }
-
-    cout << ans << endl;
+    int t; cin >> t;
+    for (int i = 1; i <= t; i++) {
+        solve(i);
+    }    
     
     return 0;
 }
