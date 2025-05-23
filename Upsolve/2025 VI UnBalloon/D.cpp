@@ -17,18 +17,12 @@ void fastio() {
 
 signed main() {
     fastio();
-    int n; cin >> n;
-    
-    multiset<int> ms;
+    int rl, hl, rc, hc; cin >> rl >> hl >> rc >> hc;
 
-    for (int i = 0; i < n; i++) {
-        int k; cin >> k;
-        auto it = ms.upper_bound(k);
-        if (it != ms.end()) ms.erase(it);
-        ms.insert(k); 
-    }
-
-    cout << ms.size() << endl;
+    int A = 3*rl*rl*hl;
+    int B = rc*rc*(hc+2*rc);
+    if (A > B) cout << "Injusto\n";
+    else cout << "Justo\n";
   
     return 0;
 }

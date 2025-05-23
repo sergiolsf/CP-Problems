@@ -18,17 +18,24 @@ void fastio() {
 signed main() {
     fastio();
     int n; cin >> n;
-    
-    multiset<int> ms;
+    vi a(n); 
+    for (auto &i: a) cin >> i;
 
-    for (int i = 0; i < n; i++) {
-        int k; cin >> k;
-        auto it = ms.upper_bound(k);
-        if (it != ms.end()) ms.erase(it);
-        ms.insert(k); 
+    sort (all(a));
+
+    int l = -1, r = n;
+    int suml = 0, sumr = 0;
+    while (l < r) {
+        if (suml <= sumr) {
+            l++;
+            if (l != r) suml += a[l];
+        } else {
+            r--;
+            if (l != r) sumr += a[r];
+        }
     }
 
-    cout << ms.size() << endl;
+    cout << 2*max(suml, sumr) << endl;
   
     return 0;
 }

@@ -18,7 +18,6 @@ void fastio() {
 const int MAX_N = 1'000'010;
 
 bool ligado[MAX_N];
-int cnt[MAX_N];
 int val[MAX_N];
 multiset<int> ms;
 
@@ -47,6 +46,7 @@ signed main() {
     fastio();
     sieve();
     int n; cin >> n;
+    int cnt[MAX_N];
     for (int i = 0; i < n; i++) {
         int d; cin >> d;
         ligado[d] = !ligado[d];

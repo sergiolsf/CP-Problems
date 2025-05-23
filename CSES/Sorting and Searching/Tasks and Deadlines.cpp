@@ -18,17 +18,18 @@ void fastio() {
 signed main() {
     fastio();
     int n; cin >> n;
-    
-    multiset<int> ms;
+    vector<pii> v(n);
+    for (auto &[a, d]: v) cin >> a >> d;
 
-    for (int i = 0; i < n; i++) {
-        int k; cin >> k;
-        auto it = ms.upper_bound(k);
-        if (it != ms.end()) ms.erase(it);
-        ms.insert(k); 
+    sort(all(v));
+
+    int t = 0, ans = 0;
+    for (auto &[a, d]: v) {
+        t += a;
+        ans += d-t;
     }
 
-    cout << ms.size() << endl;
+    cout << ans << endl;
   
     return 0;
 }

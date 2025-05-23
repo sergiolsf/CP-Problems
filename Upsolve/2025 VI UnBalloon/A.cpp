@@ -17,18 +17,11 @@ void fastio() {
 
 signed main() {
     fastio();
-    int n; cin >> n;
-    
-    multiset<int> ms;
-
-    for (int i = 0; i < n; i++) {
-        int k; cin >> k;
-        auto it = ms.upper_bound(k);
-        if (it != ms.end()) ms.erase(it);
-        ms.insert(k); 
+    int n, m; cin >> n >> m;
+    while(m--) {
+        int a, b; cin >> a >> b;
     }
-
-    cout << ms.size() << endl;
+    for (int i = 1; i <= n; i++) cout << i << (i == n ? "\n" : " ");
   
     return 0;
 }

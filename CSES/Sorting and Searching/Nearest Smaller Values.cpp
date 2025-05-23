@@ -18,17 +18,15 @@ void fastio() {
 signed main() {
     fastio();
     int n; cin >> n;
-    
-    multiset<int> ms;
+    deque<pii> dq;
 
+    dq.push_back({0,0});
     for (int i = 0; i < n; i++) {
-        int k; cin >> k;
-        auto it = ms.upper_bound(k);
-        if (it != ms.end()) ms.erase(it);
-        ms.insert(k); 
+        int x; cin >> x;
+        while(dq.back().first >= x) dq.pop_back();
+        cout << dq.back().second << " ";
+        dq.push_back({x, i+1});
     }
-
-    cout << ms.size() << endl;
   
     return 0;
 }

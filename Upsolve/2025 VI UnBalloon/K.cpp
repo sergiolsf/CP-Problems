@@ -17,18 +17,16 @@ void fastio() {
 
 signed main() {
     fastio();
-    int n; cin >> n;
+    string s; getline(cin, s);
+    string a;
+    for (int i = 10; i < s.size()-1; i++) a += s[i];
+
+    string b;
+    if (a == "Torterra") b = "Staraptor";
+    else if (a == "Staraptor") b = "Luxray";
+    else if (a == "Luxray") b = "Torterra";
+
+    cout << b << ", eu escolho voce!\n";
     
-    multiset<int> ms;
-
-    for (int i = 0; i < n; i++) {
-        int k; cin >> k;
-        auto it = ms.upper_bound(k);
-        if (it != ms.end()) ms.erase(it);
-        ms.insert(k); 
-    }
-
-    cout << ms.size() << endl;
-  
     return 0;
 }
