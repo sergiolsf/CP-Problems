@@ -15,8 +15,21 @@ void fastio() {
     cout.tie(NULL);
 }
 
+const int MAX_K = 60;
+
 signed main() {
     fastio();
+    int n; cin >> n;
+    int ans = 0;
+
+    for (int k = 1; k < MAX_K; k++) {
+        int d1 = ((n+1)/(1LL << k)) * (1LL << (k-1));
+        int d2 = max(0LL, (n+1)%(1LL<<k) - (1LL<<(k-1)));
+        //cout << k << " " << d1 << " " << d2 << endl;
+        ans += d1+d2;
+    }
+
+    cout << ans << endl;
   
     return 0;
 }

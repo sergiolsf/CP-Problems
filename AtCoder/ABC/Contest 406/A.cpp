@@ -17,6 +17,9 @@ void fastio() {
 
 signed main() {
     fastio();
+    int a, b, c, d; cin >> a >> b >> c >> d;
+    if (a > c || (a == c && b > d)) cout << "Yes\n";
+    else cout << "No\n";
   
     return 0;
 }

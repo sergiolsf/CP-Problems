@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define int long long
 #define endl '\n'
 #define all(x) (x).begin(), (x).end()
 #define pb push_back
@@ -14,30 +15,41 @@ void fastio() {
     cout.tie(NULL);
 }
 
-const int MAXN = 5001;
+const int MAX_N = 5'001;
+const int INF = 1e18;
 
-vi x;
 int n;
-//vector<vi> memo (MAXN, vi (MAXN, -1));
+vi v(MAX_N);
+int memo[MAX_N][MAX_N][2];
 
-int dp (int ini, int fim, int player) {
-    if (fim < 1 || ini > n) return 0;
-    int ans = -1;
-    //if (player == 1) ans = memo[ini][fim];
-    
-    //if (ans != -1) return ans;
-    if (ini > fim) return ans = 0;
-    if (player == 1) return max(x[ini]+dp(ini+1, fim, 2), x[fim]+dp(ini, fim-1, 2));
-    return ans = min(dp(ini+1, fim, 1), dp(ini, fim-1, 1));
+int dp(int esq, int dir, bool p) {
+    if (esq > dir) return 0;
+    int &ans = memo[esq][dir][p];
+    if (ans != INF) return ans;
+
+
+    int d1 = dp(esq+1, dir, !p);
+    int d2 = dp(esq, dir-1, !p);
+
+    if (p) return ans = max(d1+v[esq], d2+v[dir]);
+    return ans = min(d1, d2);
+}
+
+void init() {
+    for (int i = 0; i < MAX_N; i++) {
+        for (int j = 0; j < MAX_N; j++) {
+            memo[i][j][0] = INF;
+            memo[i][j][1] = INF;
+        }
+    }
 }
 
 signed main() {
     fastio();
+    init();
     cin >> n;
-    x.resize(n+1);
-    for (int i = 1; i <= n; i++) cin >> x[i];
+    for (int i = 1; i <= n; i++) cin >> v[i];
 
-    cout << dp(1, n, 1) << endl;
-   
+    cout << dp(1, n, true) << endl;
     return 0;
 }

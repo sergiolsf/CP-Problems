@@ -17,6 +17,17 @@ void fastio() {
 
 signed main() {
     fastio();
+    int n; cin >> n;
+    int M = n*1000000*8;
+    int K = 1;
+
+    int ans = 0;
+    while (K < M) {
+        K *= 2;
+        ans++;
+    }
+
+    cout << ans << endl;
   
     return 0;
 }
