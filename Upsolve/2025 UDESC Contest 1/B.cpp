@@ -18,14 +18,27 @@ void fastio() {
 signed main() {
     fastio();
     int n; cin >> n;
-    int s = 0, maior = 0;
-    while (n--) {
-        int t; cin >> t;
-        s += t;
-        maior = max(maior, t);
+    string s; cin >> s;
+    string sord = s;
+    sort(all(sord));
+
+    int i = 0;
+    for (;i < n; i++) {
+        if (sord[i] != s[i]) break;
     }
 
-    s = max(2*maior, s);
+    if (i == n) {
+        cout << s << endl;
+        return 0;
+    }
+
+    int j = n-1;
+    for (; j >= 0; j--) {
+        if (s[j] == sord[i]) break;
+    }
+
+    swap(s[i], s[j]);
+
     cout << s << endl;
   
     return 0;

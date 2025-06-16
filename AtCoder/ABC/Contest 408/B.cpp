@@ -18,15 +18,19 @@ void fastio() {
 signed main() {
     fastio();
     int n; cin >> n;
-    int s = 0, maior = 0;
+    set<int> st;
     while (n--) {
-        int t; cin >> t;
-        s += t;
-        maior = max(maior, t);
+        int a; cin >> a;
+        st.insert(a);
     }
 
-    s = max(2*maior, s);
-    cout << s << endl;
+    cout << st.size() << endl;
+    bool fir = true;
+    for (auto e: st) {
+        if (!fir) cout << " ";
+        cout << e;
+        fir = false;
+    }
   
     return 0;
 }

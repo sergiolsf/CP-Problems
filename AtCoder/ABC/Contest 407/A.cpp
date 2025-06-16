@@ -17,16 +17,11 @@ void fastio() {
 
 signed main() {
     fastio();
-    int n; cin >> n;
-    int s = 0, maior = 0;
-    while (n--) {
-        int t; cin >> t;
-        s += t;
-        maior = max(maior, t);
-    }
+    int a, b; cin >> a >> b;
+    int ans = a/b;
+    if (a%b > b/2) ans++;
 
-    s = max(2*maior, s);
-    cout << s << endl;
+    cout << ans << endl;
   
     return 0;
 }

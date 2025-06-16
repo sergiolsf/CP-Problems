@@ -17,16 +17,25 @@ void fastio() {
 
 signed main() {
     fastio();
-    int n; cin >> n;
-    int s = 0, maior = 0;
-    while (n--) {
-        int t; cin >> t;
-        s += t;
-        maior = max(maior, t);
+    string s; cin >> s;
+    int a, b;
+    int ans = 1;
+    for (int i = 0; i < s.size()-1; i++) {
+        a = s[i]-'0';
+        b = s[i+1]-'0';
+        if (a >= b) {
+            ans += a-b;
+            ans++;
+        } else {
+            ans += 9-(b-a-1);
+            ans++;
+        }
     }
 
-    s = max(2*maior, s);
-    cout << s << endl;
+    a = s[s.size()-1]-'0';
+    ans += a;
+
+    cout << ans << endl;
   
     return 0;
 }

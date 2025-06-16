@@ -17,16 +17,19 @@ void fastio() {
 
 signed main() {
     fastio();
-    int n; cin >> n;
-    int s = 0, maior = 0;
-    while (n--) {
-        int t; cin >> t;
-        s += t;
-        maior = max(maior, t);
+    int x, y; cin >> x >> y;
+    int ans = 0;
+    for (int i = 1; i <= 6; i++) {
+        for (int j = 1; j <= 6; j++) {
+            if (i+j >= x || abs(i-j) >= y) {
+                ans ++;
+            }
+        }
     }
 
-    s = max(2*maior, s);
-    cout << s << endl;
+    double res = (double) ans / 36.0;
+
+    cout << fixed << setprecision(20) << res << endl;
   
     return 0;
 }

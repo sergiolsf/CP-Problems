@@ -17,16 +17,21 @@ void fastio() {
 
 signed main() {
     fastio();
-    int n; cin >> n;
-    int s = 0, maior = 0;
-    while (n--) {
-        int t; cin >> t;
-        s += t;
-        maior = max(maior, t);
+    int n, m; cin >> n >> m;
+    vi a(n+2, 0);
+    for (int i = 1; i <= m; i++) {
+        int l, r; cin >> l >> r;
+        a[l]++;
+        a[r+1]--;
     }
 
-    s = max(2*maior, s);
-    cout << s << endl;
+    int ans = 1e18;
+    for (int i = 1; i <= n; i++) {
+        a[i] += a[i-1];
+        ans = min(ans, a[i]);
+    }
+
+    cout << ans << endl;
   
     return 0;
 }

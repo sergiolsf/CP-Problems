@@ -18,15 +18,14 @@ void fastio() {
 signed main() {
     fastio();
     int n; cin >> n;
-    int s = 0, maior = 0;
-    while (n--) {
-        int t; cin >> t;
-        s += t;
-        maior = max(maior, t);
+    string a, t; cin >> a >> t;
+    for (int i = 0; i  < n; i++) {
+        if (a[i] == 'o' && t[i] == 'o') {
+            cout << "Yes\n";
+            return 0;
+        }
     }
 
-    s = max(2*maior, s);
-    cout << s << endl;
-  
+    cout << "No\n";
     return 0;
 }
