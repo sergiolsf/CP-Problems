@@ -66,7 +66,7 @@ signed main() {
             update(1, 1, n, a, b);
         } else {
             node ans = query(1, 1, n, a, b);
-            cout << ans.pref << endl;
+            cout << max(0LL, ans.pref) << endl;
         }
     }
   
