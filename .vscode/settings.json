@@ -76,7 +76,8 @@
         "variant": "cpp",
         "rope": "cpp",
         "slist": "cpp",
-        "prefix sum queries": "cpp"
+        "prefix sum queries": "cpp",
+        "f": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
